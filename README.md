@@ -26,8 +26,6 @@
 `05_Interacting_with_Campaigns_and_Filters.ipynb`
 1. 清空你的AWS账号中用到的资源 - `06_Clean_Up_Resources.ipynb`
 
-以上为本POC过程的一般顺序。但是，如果你是参加一个两天的现场POC，建议你在到达实验现场之前事先导入user-item-interaction 和item-metadata数据。
-
 
 ## 实验步骤
 

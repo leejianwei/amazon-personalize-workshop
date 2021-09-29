@@ -3,62 +3,15 @@
 
 ## 准备环境
 
-如上所述，第一步要做的是部署一个CloudFormation模板，通过它执行大部分初始化设置的工作。打开另一个浏览器窗口或选项卡，在上面登录到你的亚马逊云科技帐户。完成后，在新选项卡中打开下面的链接，开始通过CloudFormation部署所需项目的过程。
-
-[![Launch Stack](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png)](https://console.aws.amazon.com/cloudformation/home#/stacks/new?stackName=PersonalizePOC&templateURL=https://shishuai-sagemaker.s3-us-west-2.amazonaws.com/poc-in-a-box/PersonalizePOC.yml)
-
-如果对部署CloudFormation stack有任何疑问，请按照下面的屏幕截图进行操作。
-
-### Cloud Formation 向导
-
-从点击页面底部的`Next`按钮开始，如下：
-
-![StackWizard](static/imgs/img1.png)
-
-在这一页需要完成如下任务:
-
-1. 将Stack名称改成如`PersonalizePOC`这样的
-1. 更改Notebook 的名称 (可选)
-1. 更改SageMaker EBS 卷的VolumeSize, 默认是10GB。如果你的数据集更大，请相应地增大这个数值。
+创建Sagemaker Notebook 实例：
+* Name: PersonalizeWorkshop
+* Notebook instance type: ml.m5.xlarge
+* Volume size: 20GB
 
 
-当你完成后点击底部的`Next`按钮.
-
-![StackWizard2](static/imgs/img2.png)
-
-这一页有点长，所以请滚动页面到底部，然后单击`Next`按钮。执行本POC时所有的输入项都使用默认值就行了，如果你有定制需求，请根据需要进行更改。
-
-
-![StackWizard3](static/imgs/img3.png)
-
-
-同样在这一页滚动到底部，在“I acknowledge that AWS CloudFormation might create IAM resources”左边的复选框打勾，然后点击`Create Stack`按钮。
-
-
-![StackWizard4](static/imgs/img4.png)
-
-CloudFormation会在几分钟内创建好前面描述的资源。部署时的页面如下所示：
-
-![StackWizard5](static/imgs/img5.png)
-
-在部署完成后，你可以看到如下所示的绿色的文字，表示工作已经完成：
-
-![StackWizard5](static/imgs/img6.png)
-
-现在你的环境已经创建好了，请转到SageMaker的服务页面，方法是单击控制台顶部的`Services`，然后搜索`SageMaker`并单击服务名.
-
-
-![StackWizard5](static/imgs/img7.png)
-
-在SageMaker控制台中，滚动页面直到看到下图所示的绿色框，表示你现在有许多Notebook正在使用，然后单击它.
-
-![StackWizard5](static/imgs/img8.png)
-
-在这个页面上，你会看到你运行的任何SageMaker notebook的列表，只需点击你创建的PersonalizePOC Notebook这一条的`Open JupyterLab`链接
-
-![StackWizard5](static/imgs/img9.png)
-
-这样就可以打开运行本POC的Jupyter环境；如果你不熟悉它，就把它看成是一个基于web的进行数据科学开发的IDE。页面打开后应该会自动打开`PersonalizePOC`文件夹，如果没有，只需单击屏幕左侧浏览器中的文件夹图标，然后按照下面的文档步骤开始这个POC!
+点击“Open JupyterLab" 进入Jupyter Notebook 
+* Clone a repo: https://github.com/leejianwei/amazon-personalize-workshop.git
+* 进入“amazon-personalize-workshop”文件夹
 
 
 1. 验证和导入user-item-interaction 数据 - 
